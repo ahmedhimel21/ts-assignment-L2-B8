@@ -3,12 +3,10 @@ const multiplyValue = (value: number, multiplier?: number): number => {
   else return value * 2;
 };
 
-const processInput = (
-  x: string | number | boolean,
-): string | number | undefined => {
+const processInput = (x: string | number | boolean): string | number => {
   if (typeof x === "string") return x.trim().toLowerCase();
   else if (typeof x === "number") return x * 10;
-  else if (typeof x === "boolean") {
+  else {
     if (x) return "Active";
     else return "Inactive";
   }
@@ -21,24 +19,24 @@ const formatCoordinate = (
   return `Location: ${location} (${lat}, ${long})`;
 };
 
-const concatenateArrays = <T>(...arrays: T[]): T[] => {
+const concatenateArrays = <T>(...arrays: T[][]): T[] => {
   let concatenatedArr: T[] = [];
   for (let item of arrays) concatenatedArr = concatenatedArr.concat(item);
   return concatenatedArr;
 };
 
-interface ICourse {
+interface Course {
   title: string;
   students: number;
   isPublished: boolean;
 }
 
 const getPopularCourses = (
-  courses: ICourse[],
+  courses: Course[],
   minStudents: number,
-): ICourse[] => {
+): Course[] => {
   return courses.filter(
-    (course: ICourse) =>
+    (course: Course) =>
       course.isPublished === true && course.students >= minStudents,
   );
 };
