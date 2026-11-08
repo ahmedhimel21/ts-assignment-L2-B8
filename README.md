@@ -12,5 +12,5 @@ This repository contains my solutions to the TypeScript assignment. It covers va
 
 ## Blog Posts
 
-1. [Type Narrowing in TypeScript](./type-type-narrowing.md)
+1. [Type Narrowing in TypeScript](./type-narrowing.md)
 2. [Access Modifiers in TypeScript](./access-modifiers.md)
